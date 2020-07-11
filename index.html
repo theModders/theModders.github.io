@@ -2,7 +2,24 @@
 layout: null
 ---
 <!DOCTYPE html>
-<meta http-equiv="refresh" content="0; url=https://github.com/theModders" />
-<link rel="canonical" href="https://github.com/theModders" />
-<script>window.location="https://github.com/theModders"; document.body.remove()</script>
-<a href="https://github.com/theModders">github.com/theModders</a>
+<meta http-equiv="refresh" content="5; url={{ site.target }}" />
+<script>
+	document.querySelector("meta").remove();
+	window.stop(); 
+	const path = document.location.search.substring(1);
+	const segments = path.split("/").filter(s => s != "");
+	var targetUrl;
+	if (segments.length == 0) {
+		targetUrl = "{{ site.target }}";
+	} else if (segments.length == 1) {
+		targetUrl = "{{ site.target }}" + segments[0];
+	} else {
+		targetUrl = "{{ site.target }}" + 
+				segments[0] + "/" + 
+				"edit/master/" +
+				segments.slice(1).join("/");
+	}
+	window.location = targetUrl;
+</script>
+<a href="{{ site.target }}">Enable JavaScript or click this link and navigate manually</a>
+<script>document.querySelector("a").remove();</script>
