@@ -5,5 +5,8 @@ assign path = page.path | slice: 0, pathLength
 %}<!DOCTYPE html>
 <link rel="canonical" href="{{ page.url }}" />
 <meta http-equiv="refresh" content="0; url={{ site.target }}{{ path }}" />
-<script>window.location="{{ site.target }}{{ path }}"</script>
-<noscript><a href="{{ site.target }}{{ path }}">{{ path }}</a></noscript>
+<script>
+	document.querySelector("a").remove();
+	window.location = "{{ site.target }}" + location.pathname.substring(1);
+</script>
+<a href="{{ site.target }}{{ path }}">{{ path }}</a>

@@ -2,5 +2,8 @@
 layout: null
 ---
 <!DOCTYPE html>
-<script>window.location = "{{ site.target }}" + location.pathname.substring(1);</script>
-<noscript><a href="{{ site.target }}">{{ site.target }}</a></noscript>
+<script>
+	document.querySelector("a").remove();
+	window.location = "{{ site.target }}" + location.pathname.substring(1);
+</script>
+<a href="{{ site.target }}">{{ site.target }}</a>
