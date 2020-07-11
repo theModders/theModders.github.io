@@ -1,1 +1,1 @@
-This repository exists to configure default domain for all resources from organization repositories hosted on GitHub Pages.
+git.theModders.org - configures default domain for hosted pages and redirects to GitHub web editor
