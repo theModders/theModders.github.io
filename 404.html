@@ -1,0 +1,8 @@
+---
+layout: null
+---
+Redirecting to {{ site.target }}
+<script>
+	window.location = "{{ site.target }}" + location.pathname.substring(1); 
+	document.body.remove()
+</script>
