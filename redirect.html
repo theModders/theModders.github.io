@@ -23,7 +23,7 @@
 				"edit/master/" +
 				segments.slice(1).join("/");
 	}
-	window.location = targetUrl;
+	window.location.replace(targetUrl);
 </script>
 <a href="{{ site.target }}">Enable JavaScript or click this link and navigate manually</a>
 <script>document.querySelector("a").remove();</script>
