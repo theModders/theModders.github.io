@@ -1,8 +1,6 @@
 ---
 layout: null
 ---
-Redirecting to {{ site.target }}
-<script>
-	window.location = "{{ site.target }}" + location.pathname.substring(1); 
-	document.body.remove()
-</script>
+<!DOCTYPE html>
+<script>window.location = "{{ site.target }}" + location.pathname.substring(1);</script>
+<noscript><a href="{{ site.target }}">{{ site.target }}</a></noscript>
