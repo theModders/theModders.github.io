@@ -1,12 +1,16 @@
----
-layout: null
----
 <!DOCTYPE html>
 <meta http-equiv="refresh" content="5; url={{ site.target }}" />
+<body>
 <script>
+	window.stop();
 	document.querySelector("meta").remove();
-	window.stop(); 
-	const path = document.location.search.substring(1);
+	const queryPath = document.location.search.substring(1);
+	var path;
+	if (queryPath != "") {
+		path = queryPath;
+	} else {
+		path = document.location.pathname.replace(new RegExp("^/edit\\b"), "");
+	}
 	const segments = path.split("/").filter(s => s != "");
 	var targetUrl;
 	if (segments.length == 0) {
@@ -23,3 +27,4 @@ layout: null
 </script>
 <a href="{{ site.target }}">Enable JavaScript or click this link and navigate manually</a>
 <script>document.querySelector("a").remove();</script>
+</body>

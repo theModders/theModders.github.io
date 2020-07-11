@@ -2,5 +2,13 @@ title: git.themodders.org
 description: git.themodders.org
 target: "https://github.com/theModders/"
 theme: null
+layouts_dir: .
 plugins:
   - github-pages
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "redirect"
